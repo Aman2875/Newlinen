@@ -1,0 +1,45 @@
+.image-separator-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.wrapper-image-separator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-image-separator {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.jarallax {
+  position: relative;
+  z-index: 0;
+}
+
+.jarallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.jarallax-img {
+  position: fixed;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+} 
