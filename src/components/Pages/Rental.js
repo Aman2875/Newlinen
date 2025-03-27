@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ProductPreviewSliderComponentInit, ImageSeparatorSectionComponentInit, AnimateCircularLinesInit, DashboardComponentInit, AnimateBenefitsSectionInit } from '../../animation';
+import { ProductPreviewSliderComponentInit, ImageSeparatorSectionComponentInit, AnimateCircularLinesInit, DashboardComponentInit } from '../../animation';
 
 const Rental = () => {
   useEffect(() => {
@@ -26,11 +26,6 @@ const Rental = () => {
       // Initialize dashboard animation
       if (document.querySelectorAll('[el="dashboard"]').length > 0) {
         DashboardComponentInit();
-      }
-      
-      // Initialize benefits section animation
-      if (document.querySelectorAll('[animate="benefits-section"]').length > 0) {
-        AnimateBenefitsSectionInit();
       }
 
       // Add intersection observer for elements with animate attribute

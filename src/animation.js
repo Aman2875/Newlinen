@@ -11,71 +11,7 @@ if (typeof gsap !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-// Benefits Section Animation
-const AnimateBenefitsSectionInit = () => {
-  try {
-    // Check if IntersectionObserver is available
-    if ('IntersectionObserver' in window) {
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Add in-view attribute when section comes into view
-            entry.target.setAttribute('in-view', 'true');
-            // Stop observing after animation triggers
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-      
-      // Target the image section
-      const imageSection = document.querySelector('[animate="benefits-section-image"]');
-      if (imageSection) {
-        observer.observe(imageSection);
-      }
-    }
-  } catch (error) {
-    console.error("Error initializing benefits section animation:", error);
-  }
-};
 
-// Specific function for Benefits Section Image Animation
-const AnimateBenefitsSectionImageInit = () => {
-  try {
-    // Check if IntersectionObserver is available
-    if ('IntersectionObserver' in window) {
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Add in-view attribute when image comes into view
-            entry.target.setAttribute('in-view', 'true');
-            // Stop observing after animation triggers
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-      
-      // Target the specific image element in the benefits section
-      const benefitsImage = document.querySelector('[animate="benefits-section-image"]');
-      if (benefitsImage) {
-        observer.observe(benefitsImage);
-      }
-    }
-  } catch (error) {
-    console.error("Error initializing benefits section image animation:", error);
-  }
-};
 
 const ProductPreviewSliderComponentInit = () => {
   try {
@@ -432,19 +368,6 @@ const Animation = () => {
   useEffect(() => {
     // Initialize all animations
     try {
-      // Initialize benefits section animation
-      try {
-        AnimateBenefitsSectionInit();
-      } catch (benefitsError) {
-        console.error("Error initializing benefits section animation:", benefitsError);
-      }
-      
-      // Initialize benefits section image animation
-      try {
-        AnimateBenefitsSectionImageInit();
-      } catch (benefitsImageError) {
-        console.error("Error initializing benefits section image animation:", benefitsImageError);
-      }
       
       // Initialize product preview slider if elements exist
       if (document.querySelectorAll('[el="product-preview-slider"]').length > 0) {
@@ -482,8 +405,6 @@ const Animation = () => {
 
 // Export the component and the functions
 export { 
-  AnimateBenefitsSectionInit, 
-  AnimateBenefitsSectionImageInit, 
   ProductPreviewSliderComponentInit, 
   initProductShowcaseAnimation, 
   ImageSeparatorSectionComponentInit, 
@@ -492,4 +413,3 @@ export {
 };
 
 export default Animation;
-

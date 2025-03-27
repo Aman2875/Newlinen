@@ -40,7 +40,7 @@ html.lenis body {
  **********/
 .navigation .fixed-nav > div {
   position: relative;
-  z-inex: 1;
+  z-index: 1;
 }
 
 /*
@@ -1026,6 +1026,7 @@ button[el="team-filters"] p {
 button[el="team-filters"] .layer-filter-button {
   transition: top 0.6s cubic-bezier(0.87, 0, 0.13, 1);
 }
+
 /* Hover */
 button[el="team-filters"]:hover,
 button[el="team-filters"][active="true"] {
@@ -1214,7 +1215,7 @@ button[el="sound"][playing="yes"] .layer-sound-toggle-nav {
 /** 
  * Roadmap Slider Component 
  */
-html.wf-design-mode .roadmap-slider .splide__list {
+.wf-design-mode .roadmap-slider .splide__list {
   display: flex;
   visibility-x: scroll;
 }
@@ -1226,6 +1227,7 @@ html.wf-design-mode .roadmap-slider .splide__list {
 .roadmap-slider .splide__list li:first-of-type .roadmap-slider-card {
   margin-left: calc((100vw - var(--layout--max-width)) / 2 + 80px) !important;
 }
+
 @media (max-width: 1560px) {
   .roadmap-slider .splide__list li:first-of-type .roadmap-slider-card {
     margin-left: 60px !important;

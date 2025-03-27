@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Footer.css';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -22,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer-section">
+    <footer className="footer-section" style={{height: '512px'}}> 
       <div className="footer" style={{transform: 'translate(0px, 0px)', opacity: 1}}>
       <div className="footer_leaf-bg w-embed"><svg width="1764" height="553" viewBox="0 0 1764 553" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display:'block'}}>
 <g clipPath="url(#clip0_2003_7844)">
