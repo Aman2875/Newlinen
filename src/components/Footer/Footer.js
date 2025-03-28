@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
@@ -21,9 +20,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer-section" style={{height: '512px'}}> 
+    <footer className="footer-section" style={{height: '562px'}}> 
       <div className="footer" style={{transform: 'translate(0px, 0px)', opacity: 1}}>
-      <div className="footer_leaf-bg w-embed"><svg width="1764" height="553" viewBox="0 0 1764 553" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display:'block'}}>
+      <div className="footer_leaf-bg w-embed"><svg width="1764" height="642" viewBox="0 0 1764 553" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display:'block'}}>
 <g clipPath="url(#clip0_2003_7844)">
 <g opacity="0.3">
 <mask id="mask0_2003_7844" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="-82" y="-934" width="1927" height="1920">

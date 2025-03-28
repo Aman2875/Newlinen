@@ -24,10 +24,10 @@ const Whycode = () => {
             <div className="text-body">Why Linengrass</div>
           </div>
           <div className="title-row__title-wrap">
-            <div data-animate="title" className="text-h2 font-medium" data-in-view="true">The environmental impact of linengrass service</div>
+            <div animate="title" className="text-h2 font-medium" >The environmental impact of linengrass service</div>
           </div>
         </div>
-        <div data-delay="0.5" data-animate="cards-list" className="why-codos__list" data-in-view="true">
+        <div delay="0.5" animate="cards-list" className="why-codos__list" >
           <div>
             <div className="metric-display-button">
               <div className="content-metric-display-button">

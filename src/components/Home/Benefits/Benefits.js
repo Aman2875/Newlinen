@@ -1,17 +1,13 @@
 import React from 'react';
-
-
 const Benefits = () => {
   return (
     <section className="benefits__section section">
       <div className="w-layout-blockcontainer benefits__container container w-container">
-        <div className="benefits__title-wrap">
-          <h2 animate="title" className="text-h2 font-medium no-margins" in-view="true">
-          Sustainable Linen as a Service for hotels
-          </h2>
-        </div>
+      <div class="benefits__title-wrap">
+                        <h2 animate="title" class="text-h2 font-medium no-margins">Sustainable <br /> linen as a <br />service for<br /> hotels</h2>
+                    </div>
       </div>
-      <div threshold="0.2" animate="benefits-section" className="w-layout-blockcontainer container dashboard-benefits w-container" in-view="true">
+      <div threshold="0.2" animate="benefits-section" className="w-layout-blockcontainer container dashboard-benefits w-container">
         <div border-color="white" className="container-dashboard-benefits">
           <div className="what-is-text-content__right-subtitle">
             <div className="code-embed w-embed">
@@ -206,7 +202,7 @@ const Benefits = () => {
           </div>
         </div>
       </div>
-      <div animate="benefits-section/image" className="benefits-section-bg" in-view="true">
+      <div animate="benefits-section/image" className="benefits-section-bg" >
         <img src="https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68bf9_app-benefits-hand.webp" loading="lazy" sizes="(max-width: 991px) 100vw, 1010px" srcset="https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68bf9_app-benefits-hand-p-500.webp 500w, https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68bf9_app-benefits-hand-p-800.webp 800w, https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68bf9_app-benefits-hand.webp 1037w" alt="" className="benefits-section-bg-image"></img>
       </div>
     </section>

@@ -3,14 +3,11 @@ import React from "react";
 const Features = () => {
   return (
     <section className="what-is__section">
-      <div
-        animate="what-is-codos"
-        className="w-layout-blockcontainer what-is__container container w-container"
-        in-view="true"
-      >
+      <div animate="what-is-codos" className="w-layout-blockcontainer what-is__container container w-container">
         <div className="what-is__text__content">
           <div className="what-is__text__left-col">
-          <div animate="svg-icons" class="w-embed" in-view="true"><svg width="176" height="24" viewBox="0 0 176 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="176" height="24" rx="12" fill="white"></rect><text x="20" y="17" fill="#333" font-family="Arial" font-size="14" font-weight="bold">LINENGRASS</text></svg></div>
+          <div animate="svg-icons" class="w-embed">
+            <svg width="176" height="24" viewBox="0 0 176 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="176" height="24" rx="12" fill="white"></rect><text x="20" y="17" fill="#333" font-family="Arial" font-size="14" font-weight="bold">LINENGRASS</text></svg></div>
           </div>
           <div className="what-is__text__right-col">
             <div className="what-is-text-content__right-subtitle">

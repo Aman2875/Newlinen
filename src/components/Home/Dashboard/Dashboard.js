@@ -6,26 +6,13 @@ const Dashboard = () => {
     // Initialize dashboard animations
     DashboardComponentInit();
   }, []);
-
   return (
-    <section  el="dashboard" className="dashboard-section">
+    <section el="dashboard" className="dashboard-section">
       <div className="w-layout-blockcontainer container w-container">
-        <div className="dashboard__title-wrap">
-          <h3 data-animate="title" className="text-h2 no-margin words splitting" style={{"--word-total": "6"}} data-in-view="true">
-            <span className="word" data-word="Our" style={{"--word-index": "0"}}>Our</span>
-            <span className="whitespace"> </span>
-            <span className="word" data-word="smart" style={{"--word-index": "1"}}>smart</span>
-            <span className="whitespace"> </span>
-            <span className="word" data-word="dashboard" style={{"--word-index": "2"}}>platform</span>
-            <span className="whitespace"> </span>
-            <span className="word" data-word="solution" style={{"--word-index": "3"}}>solution</span>
-            <span className="whitespace"> </span>
-            <span className="word" data-word="for" style={{"--word-index": "4"}}>for</span>
-            <span className="whitespace"> </span>
-            <span className="word" data-word="businesses." style={{"--word-index": "5"}}>hotels.</span>
-          </h3>
-        </div>
-        <div data-animate="leaf" className="image-04-leaf" style={{transform: "translate(0px, 0px)"}} data-in-view="true">
+      <div class="dashboard__title-wrap">
+                        <h3 animate="title" class="text-h2 no-margin">Our smart dashboard solution for hotels</h3>
+                    </div>
+        <div animate="leaf" className="image-04-leaf" style={{transform: "translate(0px, 0px)"}} data-in-view="true">
           <img src="https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68ca1_leaf-04.webp" loading="lazy" width="95" alt="" style={{transform: "translate3d(-2.8095px, 10.0611px, 0px) rotate(-6.1994deg)"}} />
         </div>
         <div className="line-dashboard-section">
@@ -33,11 +20,11 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="bg-layer-dashboard">
-        <div data-el="dashboard/green-layer" el="dashboard/green-layer" className="green-layer-dashboard" style={{transform: "translate3d(-185.87px, -396.908px, 0px)", translate: "none", rotate: "none", scale: "none"}}></div>
-        <div data-el="dashboard/blue-layer" el="dashboard/blue-layer" className="blue-layer-dashboard" style={{transform: "translate3d(-525.456px, 327.355px, 0px)", translate: "none", rotate: "none", scale: "none"}}></div>
+        <div el="dashboard/green-layer" className="green-layer-dashboard" style={{transform: "translate3d(-185.87px, -396.908px, 0px)", translate: "none", rotate: "none", scale: "none"}}></div>
+        <div el="dashboard/blue-layer" className="blue-layer-dashboard" style={{transform: "translate3d(-525.456px, 327.355px, 0px)", translate: "none", rotate: "none", scale: "none"}}></div>
         <div className="static-layer-dashboard"></div>
       </div>
-      <div data-threshold="0.2" data-animate="benefits-section" className="w-layout-blockcontainer container dashboard-benefits w-container" data-in-view="true">
+      <div threshold="0.2" animate="benefits-section" className="w-layout-blockcontainer container dashboard-benefits w-container">
         <div border-color="green" className="container-dashboard-benefits">
           <div className="what-is-text-content__right-subtitle">
             <div className="code-embed w-embed">

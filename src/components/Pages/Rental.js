@@ -1,104 +1,42 @@
 import React, { useEffect } from 'react';
-import { ProductPreviewSliderComponentInit, ImageSeparatorSectionComponentInit, AnimateCircularLinesInit, DashboardComponentInit } from '../../animation';
+import { TextHeroComponentInit, GenericTextAnimations, InView, ProductPreviewSliderComponentInit, ImageSeparatorSectionComponentInit, AnimateCircularLinesInit, initProductShowcaseAnimation, StartJourneyComponentInit } from '../../animation';
 
 const Rental = () => {
   useEffect(() => {
     // Set document title
     document.title = 'Hotels - Linengrass';
-    
     // Initialize all animations
-    const initAnimations = () => {
-      // Initialize product slider animation
-      if (document.querySelectorAll('[el="product-preview-slider"]').length > 0) {
-        ProductPreviewSliderComponentInit();
-      }
-      
-      // Initialize image separator animation
-      if (document.querySelectorAll('[el="image-separator-section"]').length > 0) {
-        ImageSeparatorSectionComponentInit();
-      }
-      
-      // Initialize circular lines animation
-      if (document.querySelectorAll('[data-animate="circular-lines"], [animate="circular-lines"]').length > 0) {
-        AnimateCircularLinesInit();
-      }
-      
-      // Initialize dashboard animation
-      if (document.querySelectorAll('[el="dashboard"]').length > 0) {
-        DashboardComponentInit();
-      }
-
-      // Add intersection observer for elements with animate attribute
-      const observeAnimatedElements = () => {
-        const animatedElements = document.querySelectorAll('[animate]:not([in-view])');
-        
-        if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.setAttribute('in-view', 'true');
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.2 });
-          
-          animatedElements.forEach(element => {
-            observer.observe(element);
-          });
-        }
-      };
-      
-      observeAnimatedElements();
-    };
-    
-    // Initialize animations with a small delay to ensure DOM is fully rendered
-    setTimeout(initAnimations, 100);
-    
-    // Clean up function
-    return () => {
-      // Any cleanup needed
-    };
+    TextHeroComponentInit();
+    GenericTextAnimations();
+    InView();
+    ProductPreviewSliderComponentInit();
+    ImageSeparatorSectionComponentInit();
+    AnimateCircularLinesInit();
+    initProductShowcaseAnimation();
+    StartJourneyComponentInit();
   }, []);
 
   return (
-    <div>
+    <>
       <section id="" className="product-hero">
-        <div className="w-layout-blockcontainer container w-container">
-        
-          <div className="container-product-hero">
-            <h1 animate="title" className="text-h1 font-medium no-margins on-mobile words splitting" in-view="true" style={{"--word-total": 1}}>
-              <span className="word" data-word="Businesses" style={{"--word-index": 0}}>Hotels</span>
-            </h1>
-            <div className="description-product-hero">
-              <h2 delay="0.2" animate="text" className="text-h5 font-light no-margins words lines splitting" in-view="true" style={{"--word-total": 12, "--line-total": 2}}>
-                <span className="word" data-word="The" style={{"--word-index": 0, "--line-index": 0}}>The</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="Codos" style={{"--word-index": 1, "--line-index": 0}}>Linen</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="Dashboard" style={{"--word-index": 2, "--line-index": 0}}>Dashboard</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="automates" style={{"--word-index": 3, "--line-index": 0}}>automates</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="ESG" style={{"--word-index": 4, "--line-index": 0}}>ESG</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="reports" style={{"--word-index": 5, "--line-index": 0}}>reports</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="of" style={{"--word-index": 6, "--line-index": 1}}>of</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="validated" style={{"--word-index": 7, "--line-index": 1}}>validated</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="employee" style={{"--word-index": 8, "--line-index": 1}}>employee</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="Scope" style={{"--word-index": 9, "--line-index": 1}}>Scope</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="3" style={{"--word-index": 10, "--line-index": 1}}>3</span>
-                <span className="whitespace"> </span>
-                <span className="word" data-word="emissions." style={{"--word-index": 11, "--line-index": 1}}>emissions.</span>
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div animate="circular-lines" className="lines-bg-product-hero" in-view="true">
+          <div class="w-layout-blockcontainer container w-container">
+                    <div class="container-product-hero">
+                        <div delay="1" animate="fade" class="button-wrapper-product-hero">
+                            <a href="/products" class="back-button-product-hero w-inline-block">
+                                <div className="w-embed">
+                                    <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
+                                        <path d="M24.0008 10.0006C24.0008 10.2658 23.8954 10.5201 23.7079 10.7077C23.5204 10.8952 23.266 11.0006 23.0008 11.0006H3.41454L10.7083 18.2931C10.8012 18.386 10.8749 18.4963 10.9252 18.6177C10.9755 18.7391 11.0013 18.8692 11.0013 19.0006C11.0013 19.132 10.9755 19.2621 10.9252 19.3835C10.8749 19.5048 10.8012 19.6151 10.7083 19.7081C10.6154 19.801 10.5051 19.8747 10.3837 19.9249C10.2623 19.9752 10.1322 20.0011 10.0008 20.0011C9.86939 20.0011 9.73928 19.9752 9.61789 19.9249C9.4965 19.8747 9.3862 19.801 9.29329 19.7081L0.293287 10.7081C0.20031 10.6152 0.126551 10.5049 0.0762269 10.3835C0.0259027 10.2621 0 10.132 0 10.0006C0 9.86914 0.0259027 9.73901 0.0762269 9.61762C0.126551 9.49622 0.20031 9.38593 0.293287 9.29306L9.29329 0.293056C9.48093 0.105415 9.73542 -1.97712e-09 10.0008 0C10.2662 1.97712e-09 10.5206 0.105415 10.7083 0.293056C10.8959 0.480697 11.0013 0.735192 11.0013 1.00056C11.0013 1.26592 10.8959 1.52042 10.7083 1.70806L3.41454 9.00056H23.0008C23.266 9.00056 23.5204 9.10591 23.7079 9.29345C23.8954 9.48099 24.0008 9.73534 24.0008 10.0006Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <h1 animate="title" class="text-h1 font-medium no-margins on-mobile">Hotels</h1>
+                        <div class="description-product-hero">
+                            <h2 delay="0.2" animate="text" class="text-h5 font-light no-margins">The Linen Dashboard automates ESG reports of validated employee Scope 3 emissions.</h2>
+                        </div>
+                    </div>
+                </div>
+        <div animate="circular-lines" className="lines-bg-product-hero" >
           <div className="w-embed">
             <svg width="845" height="405" viewBox="0 0 845 405" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
               <g opacity="0.5">
@@ -339,24 +277,32 @@ const Rental = () => {
         </div>
       </section>
       <section className="start-journey__section">
-        <div className="w-layout-blockcontainer start-journey__container w-container">
-          <h4 animate="title" className="text-h2 font-medium no-margins start-journey__title">Start your journey</h4>
-          <div animate="fade" delay="0.2" className="start-journey__button-wrap" style={{opacity: 1}}>
-            <a href="https://linengrass.com" target="_blank" rel="noreferrer" className="primary-button w-inline-block">
-              <div className="icon-primary-button">
-                <img src="https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68bf8_icon-arrow-down.svg" loading="lazy" alt="" className="image-2" />
-              </div>
-              <div className="text-primary-button text-button">Let's talk Laundry</div>
-              <div className="hover-color-primary-button" />
-            </a>
-          </div>
+      <div className="w-layout-blockcontainer start-journey__container w-container">
+        <h4 animate="title" className="text-h2 font-medium no-margins start-journey__title">
+          Start your journey
+        </h4>
+        <div  className="start-journey__button-wrap">
+          <a href="https://admin.linengrass.com" target="_blank" rel="noopener noreferrer" className="primary-button w-inline-block">
+            <div className="icon-primary-button">
+              <img 
+                src="https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68bf8_icon-arrow-down.svg" 
+                loading="lazy" 
+                alt="Down arrow" 
+                className="image-2"
+              />
+            </div>
+            <div className="text-primary-button text-button">Let's talk Laundry</div>
+            <div className="hover-color-primary-button"></div>
+          </a>
         </div>
-        <div className="start-journey__bg-blue-shape" />
-        <div className="start-journey__bg-blue-green" />
-        <div className="start-journey__bg-white" />
-        <div className="start-journey__bg-pattern" />
-      </section>
-    </div>
+      </div>
+      <div className="start-journey__bg-blue-shape"></div>
+      <div className="start-journey__bg-blue-green"></div>
+      
+      <div className="start-journey__bg-white"></div>
+      <div className="start-journey__bg-pattern"></div>
+    </section>
+    </>
   );
 };
 
