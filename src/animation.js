@@ -18,59 +18,117 @@ if (typeof gsap !== 'undefined') {
 
 
 const ProductPreviewSliderComponentInit = () => {
-  let e = document.querySelectorAll('[el="product-preview-slider"]')
-    , t = document.querySelector('[el="slider/title"]')
-    , o = document.querySelector('[el="slider/description"]');
-  e.forEach(e => {
-    let r = e.classList.contains("commuters-product-slider-component")
-      , n = e.querySelector('[el="slider/product-preview-slider"]')
-      , i = tns({
-        container: n,
-        loop: !1,
-        items: 1,
-        autoWidth: !0,
-        mouseDrag: !0,
-        controls: !1,
-        nav: !1,
-        gutter: 20,
-        edgePadding: r ? 80 : 120,
-        responsive: {
+  try {
+    // Get all product preview slider containers
+    const sliderContainers = document.querySelectorAll('[el="product-preview-slider"]');
+    if (!sliderContainers.length) return;
+
+    // Get title and description elements
+    const titleElement = document.querySelector('[el="slider/title"]');
+    const descriptionElement = document.querySelector('[el="slider/description"]');
+
+    sliderContainers.forEach(container => {
+      try {
+        // Check if it's a commuters product slider
+        const isCommutersSlider = container.classList.contains("commuters-product-slider-component");
+        
+        // Get the slider element
+        const sliderElement = container.querySelector('[el="slider/product-preview-slider"]');
+        if (!sliderElement) {
+          console.warn('Slider element not found in container');
+          return;
+        }
+
+        // Initialize tiny-slider
+        const slider = tns({
+          container: sliderElement,
+          loop: false,
+          items: 1,
+          autoWidth: true,
+          mouseDrag: true,
+          controls: false,
+          nav: false,
+          gutter: 20,
+          edgePadding: isCommutersSlider ? 80 : 120,
+          responsive: {
             1200: {
-                gutter: r ? 80 : 120
+              gutter: isCommutersSlider ? 80 : 120
             },
             991: {
-                gutter: 60
+              gutter: 60
             },
             568: {
-                gutter: 60
+              gutter: 60
             }
+          }
+        });
+
+        // Get navigation buttons
+        const prevButton = container.querySelector('.nav-button---slider[direction="left"]');
+        const nextButton = container.querySelector('.nav-button---slider[direction="right"]');
+
+        if (!prevButton || !nextButton) {
+          console.warn('Navigation buttons not found');
+          return;
         }
-    })
-      , l = e.querySelector('.nav-button---slider[direction="left"]')
-      , a = e.querySelector('.nav-button---slider[direction="right"]')
-      , s = () => {
-      let e = i.getInfo()
-        , r = 0 === e.index
-        , s = e.index === e.slideCount - 1;
-      l.disabled = r;
-      a.disabled = s;
-      n.setAttribute("item-active", e.index);
-      let c = document.querySelector("#tns1-item" + e.index);
-      console.log("-->", c);
-      if (t) t.innerHTML = c.getAttribute("title");
-      if (o) o.innerHTML = c.getAttribute("description");
-  };
-  l.addEventListener("click", () => {
-    i.goTo("prev");
-    s();
-  });
-  a.addEventListener("click", () => {
-    i.goTo("next");
-    s();
-  });
-  i.events.on("indexChanged", s);
-  s();
-});
+
+        // Update slider state function
+        const updateSliderState = () => {
+          try {
+            const info = slider.getInfo();
+            const isFirstSlide = info.index === 0;
+            const isLastSlide = info.index === info.slideCount - 1;
+
+            // Update button states
+            prevButton.disabled = isFirstSlide;
+            nextButton.disabled = isLastSlide;
+
+            // Update active item attribute
+            sliderElement.setAttribute("item-active", info.index);
+
+            // Get current slide element
+            const currentSlide = document.querySelector(`#tns1-item${info.index}`);
+            if (!currentSlide) {
+              console.warn('Current slide element not found');
+              return;
+            }
+
+            // Update title and description if elements exist
+            if (titleElement && currentSlide.hasAttribute('title')) {
+              titleElement.innerHTML = currentSlide.getAttribute('title');
+            }
+            if (descriptionElement && currentSlide.hasAttribute('description')) {
+              descriptionElement.innerHTML = currentSlide.getAttribute('description');
+            }
+          } catch (error) {
+            console.error('Error updating slider state:', error);
+          }
+        };
+
+        // Add event listeners
+        prevButton.addEventListener("click", () => {
+          slider.goTo("prev");
+          updateSliderState();
+        });
+
+        nextButton.addEventListener("click", () => {
+          slider.goTo("next");
+          updateSliderState();
+        });
+
+        // Listen for slide changes
+        slider.events.on("indexChanged", updateSliderState);
+
+        // Initialize slider state
+        updateSliderState();
+
+      } catch (containerError) {
+        console.error('Error initializing slider container:', containerError);
+      }
+    });
+  } catch (error) {
+    console.error('Error in ProductPreviewSliderComponentInit:', error);
+  }
 };
 
 // Function to initialize the product showcase section animation
