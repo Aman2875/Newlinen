@@ -18,8 +18,8 @@
 /**********************
  *  Smooth Scrolling  *
  **********************/
-html.lenis,
-html.lenis body {
+.lenis,
+.lenis body {
   height: auto;
 }
 
@@ -612,7 +612,6 @@ body a {
   .hero__section .hero-content-wrap h1 {
     font-size: 130px;
     line-height: 0.8;
-    text-shadow: rgba(0, 0, 0, 0.15) 2px 2px 4px;
   }
 }
 @media (min-width: 768px) and (max-height: 700px) {
@@ -620,6 +619,18 @@ body a {
     font-size: 90px;
     line-height: 0.85;
   }
+}
+
+.bg{
+  color:#000000;
+  font-weight: 700; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+} 
+
+@media (max-width: 768px) {
+  .ln{
+    font-size: 20px;
+  } 
 }
  
 /**
@@ -937,12 +948,6 @@ div[el="slider/product-preview-slider"][item-active="10"] #tns1-item10 {
   filter: grayscale(0%);
 }
 
-/**
- * Loading Screen
- */
-html:not(.wf-design-mode) .loading-screen {
-  display: flex !important;
-}
 
 /**
  * Calculator
@@ -1107,53 +1112,7 @@ button[el="team-filters"][active="true"] .layer-filter-button {
   scale: 0.8;
 }
 
-/**
- * Sound Button
- **/
-button[el="sound"][playing="yes"] {
-}
-button[el="sound"][playing="no"] {
-  opacity: 0.5;
-}
-button[el="sound"][playing="no"] [el="on"] {
-  visibility: hidden;
-}
-button[el="sound"][playing="no"] [el="off"] {
-  visibility: visible;
-}
-button[el="sound"][playing="yes"] [el="on"] {
-  visibility: visible;
-}
-button[el="sound"][playing="yes"] [el="off"] {
-  visibility: hidden;
-}
 
-button[el="sound"][playing="yes"] .layer-sound-toggle-nav {
-  animation: expand 3s ease-in-out infinite;
-}
-
-@keyframes expand {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/**
- * Sound Button
- **/
-.submit-button-newsletter-form .w-embed {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.submit-button-newsletter-form:hover .w-embed {
-  transform: translateX(10px);
-}
 
 /************
  *  Slider  *

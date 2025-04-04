@@ -21,15 +21,7 @@ const Rental = () => {
       <section id="" className="product-hero">
           <div class="w-layout-blockcontainer container w-container">
                     <div class="container-product-hero">
-                        <div delay="1" animate="fade" class="button-wrapper-product-hero">
-                            <a href="/products" class="back-button-product-hero w-inline-block">
-                                <div className="w-embed">
-                                    <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
-                                        <path d="M24.0008 10.0006C24.0008 10.2658 23.8954 10.5201 23.7079 10.7077C23.5204 10.8952 23.266 11.0006 23.0008 11.0006H3.41454L10.7083 18.2931C10.8012 18.386 10.8749 18.4963 10.9252 18.6177C10.9755 18.7391 11.0013 18.8692 11.0013 19.0006C11.0013 19.132 10.9755 19.2621 10.9252 19.3835C10.8749 19.5048 10.8012 19.6151 10.7083 19.7081C10.6154 19.801 10.5051 19.8747 10.3837 19.9249C10.2623 19.9752 10.1322 20.0011 10.0008 20.0011C9.86939 20.0011 9.73928 19.9752 9.61789 19.9249C9.4965 19.8747 9.3862 19.801 9.29329 19.7081L0.293287 10.7081C0.20031 10.6152 0.126551 10.5049 0.0762269 10.3835C0.0259027 10.2621 0 10.132 0 10.0006C0 9.86914 0.0259027 9.73901 0.0762269 9.61762C0.126551 9.49622 0.20031 9.38593 0.293287 9.29306L9.29329 0.293056C9.48093 0.105415 9.73542 -1.97712e-09 10.0008 0C10.2662 1.97712e-09 10.5206 0.105415 10.7083 0.293056C10.8959 0.480697 11.0013 0.735192 11.0013 1.00056C11.0013 1.26592 10.8959 1.52042 10.7083 1.70806L3.41454 9.00056H23.0008C23.266 9.00056 23.5204 9.10591 23.7079 9.29345C23.8954 9.48099 24.0008 9.73534 24.0008 10.0006Z" fill="currentColor"/>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
+                        
                         <h1 animate="title" class="text-h1 font-medium no-margins on-mobile">Hotels</h1>
                         <div class="description-product-hero">
                             <h2 delay="0.2" animate="text" class="text-h5 font-light no-margins">The Linen Dashboard automates ESG reports of validated employee Scope 3 emissions.</h2>
@@ -48,80 +40,67 @@ const Rental = () => {
         </div>
       </section>
 
-      <section el="image-separator-section" className="small-image-parallax-section" style={{height: "194px"}}>
+      <section el="image-separator-section" className="small-image-parallax-section" >
         <div className="image-small-image-parallax-section" />
       </section>
       
-      <section className="product-showcase-section section fade-in">
-        <div className="w-layout-blockcontainer container w-container">
-          <div className="content---product-showcase">
-            <h6 el="slider/title" animate="title" className="text-h2 no-argins words splitting animate-title" in-view="true" style={{"--word-total": 2}}>Home Page</h6>
-          </div>
-        </div>
-        <div className="slider-container---product-showcase">
-          <div el="product-preview-slider" className="businesses-product-slider-component">
-            <div className="w-layout-blockcontainer container w-container">
-              <div className="nav---businesses-product-slider">
-                <button direction="left" className="nav-button---slider" disabled="">
-                  <div className="nav-button-icon---slider w-embed">
-                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
-                      <path d="M0.219376 8.53104L6.96937 15.281C7.11011 15.4218 7.30098 15.5008 7.5 15.5008C7.69902 15.5008 7.88989 15.4218 8.03063 15.281C8.17136 15.1403 8.25042 14.9494 8.25042 14.7504C8.25042 14.5514 8.17136 14.3605 8.03063 14.2198L2.56031 8.75042H17.25C17.4489 8.75042 17.6397 8.6714 17.7803 8.53075C17.921 8.3901 18 8.19933 18 8.00042C18 7.8015 17.921 7.61074 17.7803 7.47009C17.6397 7.32943 17.4489 7.25042 17.25 7.25042H2.56031L8.03063 1.78104C8.17136 1.64031 8.25042 1.44944 8.25042 1.25042C8.25042 1.05139 8.17136 0.860523 8.03063 0.719792C7.88989 0.579062 7.69902 0.5 7.5 0.5C7.30098 0.5 7.11011 0.579062 6.96937 0.719792L0.219376 7.46979C0.149643 7.53945 0.0943222 7.62216 0.0565796 7.71321C0.018837 7.80426 -0.000589371 7.90186 -0.000589371 8.00042C-0.000589371 8.09898 0.018837 8.19657 0.0565796 8.28762C0.0943222 8.37867 0.149643 8.46139 0.219376 8.53104Z" fill="black" />
-                    </svg>
-                  </div>
-                  <div className="nav-button-icon---slider w-embed">
-                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
-                      <path d="M17.7806 8.53104L11.0306 15.281C10.8899 15.4218 10.699 15.5008 10.5 15.5008C10.301 15.5008 10.1101 15.4218 9.96937 15.281C9.82864 15.1403 9.74958 14.9494 9.74958 14.7504C9.74958 14.5514 9.82864 14.3605 9.96937 14.2198L15.4397 8.75042H0.75C0.551088 8.75042 0.360322 8.6714 0.21967 8.53075C0.0790178 8.3901 0 8.19933 0 8.00042C0 7.8015 0.0790178 7.61074 0.21967 7.47009C0.360322 7.32943 0.551088 7.25042 0.75 7.25042H15.4397L9.96937 1.78104C9.82864 1.64031 9.74958 1.44944 9.74958 1.25042C9.74958 1.05139 9.82864 0.860523 9.96937 0.719792C10.1101 0.579062 10.301 0.5 10.5 0.5C10.699 0.5 10.8899 0.579062 11.0306 0.719792L17.7806 7.46979C17.8504 7.53945 17.9057 7.62216 17.9434 7.71321C17.9812 7.80426 18.0006 7.90186 18.0006 8.00042C18.0006 8.09898 17.9812 8.19657 17.9434 8.28762C17.9057 8.37867 17.8504 8.46139 17.7806 8.53104Z" fill="black" />
-                    </svg>
-                  </div>
-                  <div className="nav-button-bg---slider" />
-                </button>
-                <button direction="right" className="nav-button---slider">
-                  <div className="nav-button-icon---slider w-embed">
-                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
-                      <path d="M0.219376 8.53104L6.96937 15.281C7.11011 15.4218 7.30098 15.5008 7.5 15.5008C7.69902 15.5008 7.88989 15.4218 8.03063 15.281C8.17136 15.1403 8.25042 14.9494 8.25042 14.7504C8.25042 14.5514 8.17136 14.3605 8.03063 14.2198L2.56031 8.75042H17.25C17.4489 8.75042 17.6397 8.6714 17.7803 8.53075C17.921 8.3901 18 8.19933 18 8.00042C18 7.8015 17.921 7.61074 17.7803 7.47009C17.6397 7.32943 17.4489 7.25042 17.25 7.25042H2.56031L8.03063 1.78104C8.17136 1.64031 8.25042 1.44944 8.25042 1.25042C8.25042 1.05139 8.17136 0.860523 8.03063 0.719792C7.88989 0.579062 7.69902 0.5 7.5 0.5C7.30098 0.5 7.11011 0.579062 6.96937 0.719792L0.219376 7.46979C0.149643 7.53945 0.0943222 7.62216 0.0565796 7.71321C0.018837 7.80426 -0.000589371 7.90186 -0.000589371 8.00042C-0.000589371 8.09898 0.018837 8.19657 0.0565796 8.28762C0.0943222 8.37867 0.149643 8.46139 0.219376 8.53104Z" fill="black" />
-                    </svg>
-                  </div>
-                  <div className="nav-button-icon---slider w-embed">
-                    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
-                      <path d="M17.7806 8.53104L11.0306 15.281C10.8899 15.4218 10.699 15.5008 10.5 15.5008C10.301 15.5008 10.1101 15.4218 9.96937 15.281C9.82864 15.1403 9.74958 14.9494 9.74958 14.7504C9.74958 14.5514 9.82864 14.3605 9.96937 14.2198L15.4397 8.75042H0.75C0.551088 8.75042 0.360322 8.6714 0.21967 8.53075C0.0790178 8.3901 0 8.19933 0 8.00042C0 7.8015 0.0790178 7.61074 0.21967 7.47009C0.360322 7.32943 0.551088 7.25042 0.75 7.25042H15.4397L9.96937 1.78104C9.82864 1.64031 9.74958 1.44944 9.74958 1.25042C9.74958 1.05139 9.82864 0.860523 9.96937 0.719792C10.1101 0.579062 10.301 0.5 10.5 0.5C10.699 0.5 10.8899 0.579062 11.0306 0.719792L17.7806 7.46979C17.8504 7.53945 17.9057 7.62216 17.9434 7.71321C17.9812 7.80426 18.0006 7.90186 18.0006 8.00042C18.0006 8.09898 17.9812 8.19657 17.9434 8.28762C17.9057 8.37867 17.8504 8.46139 17.7806 8.53104Z" fill="black" />
-                    </svg>
-                  </div>
-                  <div className="nav-button-bg---slider" />
-                </button>
-              </div>
-            </div>
-            <div className="tns-outer" id="tns1-ow">
-              <div className="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span className="current">2 to 4</span>  of 4</div>
-              <div id="tns1-mw" className="tns-ovh">
-                <div className="tns-inner" id="tns1-iw">
-                  <div className="tns-outer" id="tns1-ow">
-                    <div className="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span className="current">1 to 2</span>  of 4</div>
-                    <div id="tns1-mw" className="tns-ovh">
-                      <div className="tns-inner" id="tns1-iw">
-                        <div el="slider/product-preview-slider" className="wrapper---businesses-product-slider tns-slider tns-carousel tns-subpixel tns-calc tns-autowidth tns-horizontal  tns-slider tns-carousel tns-subpixel tns-calc tns-autowidth tns-horizontal" id="tns1" item-active="0" style={{transform: "translate3d(0px, 0px, 0px)", transitionDuration: "0s"}}>
-                          <div description="" title="Home Page" className="media---businesses-product-slider tns-item tns-slide-active slide-appear" id="tns1-item0">
-                            <img src="https://linengrass.com/images/6694e750ddf5484a13b68c79_businesses%20-%20image%201%201.png" loading="eager" width="1093" alt="" className="loaded tns-complete" />
-                          </div>
-                          <div description="Scope 3 employee and student commuting emissions" title="Weekly Stats" className="media---businesses-product-slider tns-item tns-slide-active slide-appear" id="tns1-item1">
-                            <img src="https://linengrass.com/images/6694e750ddf5484a13b68c7a_businesses%20-%20image%202%201%202.png" loading="eager" width="1093" title="[1] Commuting habits and company impact" alt="" description="[1] Scope 3 employee and student commuting emissions" className="loaded tns-complete" />
-                          </div>
-                          <div description="Scope 3 employee and student commuting emissions" title="Monthly Stats" className="media---businesses-product-slider tns-item tns-slide-active slide-appear" id="tns1-item2" aria-hidden="true" tabIndex="-1">
-                            <img src="https://linengrass.com/images/6694e750ddf5484a13b68c7b_businesses%20-%20image%203%201%203.png" loading="eager" width="1093" title="[1] Commuting habits and company impact" alt="" description="[1] Scope 3 employee and student commuting emissions" className="loaded tns-complete" />
-                          </div>
-                          <div description="Scope 3 employee and student commuting emissions" title="Account" className="media---businesses-product-slider tns-item tns-slide-active slide-appear" id="tns1-item3" aria-hidden="true" tabIndex="-1">
-                            <img src="https://linengrass.com/images/6694e750ddf5484a13b68c98_businesses20image201-p-800.png" width="1093" alt="" sizes="25vw" title="[1] Commuting habits and company impact" loading="eager" description="[1] Scope 3 employee and student commuting emissions" srcSet="/images/6694e750ddf5484a13b68c98_businesses20image201-p-800.png" className="loaded tns-complete" />
-                          </div>
-                        </div>
-                      </div>
+      <section class="product-showcase-section section">
+                <div class="w-layout-blockcontainer container w-container">
+                    <div class="content---product-showcase">
+                        <h6 el="slider/title" animate="title" class="text-h2 no-argins">Home Page</h6>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="shape-bg---product-showcase slide-up" />
-      </section>
+                <div class="slider-container---product-showcase">
+                    <div el="product-preview-slider" class="businesses-product-slider-component">
+                        <div class="w-layout-blockcontainer container w-container">
+                            <div class="nav---businesses-product-slider">
+                                <button direction="left" class="nav-button---slider">
+                                    <div class="nav-button-icon---slider w-embed">
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
+                                            <path d="M0.219376 8.53104L6.96937 15.281C7.11011 15.4218 7.30098 15.5008 7.5 15.5008C7.69902 15.5008 7.88989 15.4218 8.03063 15.281C8.17136 15.1403 8.25042 14.9494 8.25042 14.7504C8.25042 14.5514 8.17136 14.3605 8.03063 14.2198L2.56031 8.75042H17.25C17.4489 8.75042 17.6397 8.6714 17.7803 8.53075C17.921 8.3901 18 8.19933 18 8.00042C18 7.8015 17.921 7.61074 17.7803 7.47009C17.6397 7.32943 17.4489 7.25042 17.25 7.25042H2.56031L8.03063 1.78104C8.17136 1.64031 8.25042 1.44944 8.25042 1.25042C8.25042 1.05139 8.17136 0.860523 8.03063 0.719792C7.88989 0.579062 7.69902 0.5 7.5 0.5C7.30098 0.5 7.11011 0.579062 6.96937 0.719792L0.219376 7.46979C0.149643 7.53945 0.0943222 7.62216 0.0565796 7.71321C0.018837 7.80426 -0.000589371 7.90186 -0.000589371 8.00042C-0.000589371 8.09898 0.018837 8.19657 0.0565796 8.28762C0.0943222 8.37867 0.149643 8.46139 0.219376 8.53104Z" fill="black"/>
+                                        </svg>
+                                    </div>
+                                    <div class="nav-button-icon---slider w-embed">
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
+                                            <path d="M17.7806 8.53104L11.0306 15.281C10.8899 15.4218 10.699 15.5008 10.5 15.5008C10.301 15.5008 10.1101 15.4218 9.96937 15.281C9.82864 15.1403 9.74958 14.9494 9.74958 14.7504C9.74958 14.5514 9.82864 14.3605 9.96937 14.2198L15.4397 8.75042H0.75C0.551088 8.75042 0.360322 8.6714 0.21967 8.53075C0.0790178 8.3901 0 8.19933 0 8.00042C0 7.8015 0.0790178 7.61074 0.21967 7.47009C0.360322 7.32943 0.551088 7.25042 0.75 7.25042H15.4397L9.96937 1.78104C9.82864 1.64031 9.74958 1.44944 9.74958 1.25042C9.74958 1.05139 9.82864 0.860523 9.96937 0.719792C10.1101 0.579062 10.301 0.5 10.5 0.5C10.699 0.5 10.8899 0.579062 11.0306 0.719792L17.7806 7.46979C17.8504 7.53945 17.9057 7.62216 17.9434 7.71321C17.9812 7.80426 18.0006 7.90186 18.0006 8.00042C18.0006 8.09898 17.9812 8.19657 17.9434 8.28762C17.9057 8.37867 17.8504 8.46139 17.7806 8.53104Z" fill="black"/>
+                                        </svg>
+                                    </div>
+                                    <div class="nav-button-bg---slider"></div>
+                                </button>
+                                <button direction="right" class="nav-button---slider">
+                                    <div class="nav-button-icon---slider w-embed">
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
+                                            <path d="M0.219376 8.53104L6.96937 15.281C7.11011 15.4218 7.30098 15.5008 7.5 15.5008C7.69902 15.5008 7.88989 15.4218 8.03063 15.281C8.17136 15.1403 8.25042 14.9494 8.25042 14.7504C8.25042 14.5514 8.17136 14.3605 8.03063 14.2198L2.56031 8.75042H17.25C17.4489 8.75042 17.6397 8.6714 17.7803 8.53075C17.921 8.3901 18 8.19933 18 8.00042C18 7.8015 17.921 7.61074 17.7803 7.47009C17.6397 7.32943 17.4489 7.25042 17.25 7.25042H2.56031L8.03063 1.78104C8.17136 1.64031 8.25042 1.44944 8.25042 1.25042C8.25042 1.05139 8.17136 0.860523 8.03063 0.719792C7.88989 0.579062 7.69902 0.5 7.5 0.5C7.30098 0.5 7.11011 0.579062 6.96937 0.719792L0.219376 7.46979C0.149643 7.53945 0.0943222 7.62216 0.0565796 7.71321C0.018837 7.80426 -0.000589371 7.90186 -0.000589371 8.00042C-0.000589371 8.09898 0.018837 8.19657 0.0565796 8.28762C0.0943222 8.37867 0.149643 8.46139 0.219376 8.53104Z" fill="black"/>
+                                        </svg>
+                                    </div>
+                                    <div class="nav-button-icon---slider w-embed">
+                                        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: "block"}}>
+                                            <path d="M17.7806 8.53104L11.0306 15.281C10.8899 15.4218 10.699 15.5008 10.5 15.5008C10.301 15.5008 10.1101 15.4218 9.96937 15.281C9.82864 15.1403 9.74958 14.9494 9.74958 14.7504C9.74958 14.5514 9.82864 14.3605 9.96937 14.2198L15.4397 8.75042H0.75C0.551088 8.75042 0.360322 8.6714 0.21967 8.53075C0.0790178 8.3901 0 8.19933 0 8.00042C0 7.8015 0.0790178 7.61074 0.21967 7.47009C0.360322 7.32943 0.551088 7.25042 0.75 7.25042H15.4397L9.96937 1.78104C9.82864 1.64031 9.74958 1.44944 9.74958 1.25042C9.74958 1.05139 9.82864 0.860523 9.96937 0.719792C10.1101 0.579062 10.301 0.5 10.5 0.5C10.699 0.5 10.8899 0.579062 11.0306 0.719792L17.7806 7.46979C17.8504 7.53945 17.9057 7.62216 17.9434 7.71321C17.9812 7.80426 18.0006 7.90186 18.0006 8.00042C18.0006 8.09898 17.9812 8.19657 17.9434 8.28762C17.9057 8.37867 17.8504 8.46139 17.7806 8.53104Z" fill="black"/>
+                                        </svg>
+                                    </div>
+                                    <div class="nav-button-bg---slider"></div>
+                                </button>
+                            </div>
+                        </div>
+                        <div el="slider/product-preview-slider" class="wrapper---businesses-product-slider">
+                            <div description="" title="Home Page" class="media---businesses-product-slider">
+                                <img src="/images/6694e750ddf5484a13b68c79_businesses-image1.png" loading="eager" width="1093" alt=""/>
+                            </div>
+                            <div description="Scope 3 employee and student commuting emissions" title="Weekly Stats" class="media---businesses-product-slider">
+                                <img src="/images/6694e750ddf5484a13b68c7a_businesses-image2.png" loading="eager" width="1093" title="[1] Commuting habits and company impact" alt="" description="[1] Scope 3 employee and student commuting emissions"/>
+                            </div>
+                            <div description="Scope 3 employee and student commuting emissions" title="Monthly Stats" class="media---businesses-product-slider">
+                                <img src="/images/6694e750ddf5484a13b68c7b_businesses-image3.png" loading="eager" width="1093" title="[1] Commuting habits and company impact" alt="" description="[1] Scope 3 employee and student commuting emissions"/>
+                            </div>
+                            <div description="Scope 3 employee and student commuting emissions" title="Account" class="media---businesses-product-slider">
+                                <img src="/images/6694e750ddf5484a13b68c98_businesses20image4.png" width="1093" alt="" sizes="25vw" title="[1] Commuting habits and company impact" loading="eager" description="[1] Scope 3 employee and student commuting emissions" srcset="/images/ 6694e750ddf5484a13b68c98_businesses20image4.png 500w, /images/6694e750ddf5484a13b68c98_businesses20image4.png 800w, /images/6694e750ddf5484a13b68c98_businesses20image4.png 1080w, /images/6694e750ddf5484a13b68c98_businesses20image4.png 1600w, /images/6694e750ddf5484a13b68c98_businesses20image4.png 2168w"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shape-bg---product-showcase"></div>
+            </section>
+      
       
       <section className="section benefits-grid-section">
         <div threshold="0.2" animate="benefits-section" className="w-layout-blockcontainer container dashboard-benefits w-container">

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { TextHeroComponentInit, GenericTextAnimations, InView } from '../../../animation';
+import { TextHeroComponentInit, GenericTextAnimations, InView, HomeHeroComponentInit } from '../../../animation';
 
 const Hero = () => {
   useEffect(() => {
@@ -9,20 +9,22 @@ const Hero = () => {
     GenericTextAnimations();
     // Initialize in-view animations
     InView();
+    // Initialize home hero component
+    HomeHeroComponentInit();
   }, []);
   return (
     <section el="home-hero" className="hero__section">
-      <div el="home-hero/marker" className="image-marker-hero" animate="fade" in-view="true" style={{ transform: 'translate3d(0px, 4.7142px, 0px)' }}></div>
+      <div el="home-hero/marker" className="image-marker-hero" animate="fade"  style={{ transform: 'translate3d(0px, 4.7142px, 0px)' }}></div>
       <div className="w-layout-blockcontainer container w-container">
         <div className="hero-content">
         <div class="hero-content-wrap">
-          <h1 el="home-hero/title" class="text-h1 font-medium no-margins" animate="title">
+            <h1 el="home-hero/title" class="text-h1 font-medium no-margins bg" animate="title">
             Every<br/>
-            commute<br/>counts.
+            Linen Cycle<br/>Counts.
           </h1>
           <div class="hero-content-text-wrap">
-             <h2 delay="0.3" el="home-hero/intro" class="text-h5 font-light no-margins" animate="title">
-              Codos validates and rewards<br/>every eco-friendly commute
+          <h2 delay="0.3" el="home-hero/intro" class="text-h5 font-light no-margins bg ln" animate="title">
+             Linengrass leases and washes<br /> eco-friendly hospitality linen
              </h2>
             </div>
             </div>

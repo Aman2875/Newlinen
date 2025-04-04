@@ -12,9 +12,11 @@ const Dashboard = () => {
       <div class="dashboard__title-wrap">
                         <h3 animate="title" class="text-h2 no-margin">Our smart dashboard solution for hotels</h3>
                     </div>
-        <div animate="leaf" className="image-04-leaf" style={{transform: "translate(0px, 0px)"}} data-in-view="true">
-          <img src="https://cdn.prod.website-files.com/6694e750ddf5484a13b68bbc/6694e750ddf5484a13b68ca1_leaf-04.webp" loading="lazy" width="95" alt="" style={{transform: "translate3d(-2.8095px, 10.0611px, 0px) rotate(-6.1994deg)"}} />
-        </div>
+
+                    <div class="dashboard__preview-wrap">
+                        <img src="/images/dashboard.png" alt="Dashboard Preview" className="animation-dashboard" style={{width: '100%', height: 'auto'}} />
+                    </div>
+        
         <div className="line-dashboard-section">
           <div className="line-pointer-dashboard-section"></div>
         </div>

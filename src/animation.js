@@ -8,127 +8,86 @@ import Lenis from '@studio-freight/lenis';
 import Splitting from 'splitting';
 import 'splitting/dist/splitting.css';
 import { tns } from 'tiny-slider';
+import jQuery from 'jquery';
+import { Splide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
+// Make jQuery available globally
+window.$ = jQuery;
 
 // Register ScrollTrigger plugin
 if (typeof gsap !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-
-
 const ProductPreviewSliderComponentInit = () => {
-  try {
-    // Get all product preview slider containers
-    const sliderContainers = document.querySelectorAll('[el="product-preview-slider"]');
-    if (!sliderContainers.length) return;
-
-    // Get title and description elements
-    const titleElement = document.querySelector('[el="slider/title"]');
-    const descriptionElement = document.querySelector('[el="slider/description"]');
-
-    sliderContainers.forEach(container => {
-      try {
-        // Check if it's a commuters product slider
-        const isCommutersSlider = container.classList.contains("commuters-product-slider-component");
+    let e = document.querySelectorAll('[el="product-preview-slider"]'),
+        t = document.querySelector('[el="slider/title"]'),
+        o = document.querySelector('[el="slider/description"]');
+    
+    if (!e || e.length === 0) return; // Exit if no slider elements found
+    
+    e.forEach(e => {
+        let r = e.classList.contains("commuters-product-slider-component"),
+            n = e.querySelector('[el="slider/product-preview-slider"]');
+            
+        if (!n) return; // Skip if no product preview slider found
         
-        // Get the slider element
-        const sliderElement = container.querySelector('[el="slider/product-preview-slider"]');
-        if (!sliderElement) {
-          console.warn('Slider element not found in container');
-          return;
-        }
-
-        // Initialize tiny-slider
-        const slider = tns({
-          container: sliderElement,
-          loop: false,
-          items: 1,
-          autoWidth: true,
-          mouseDrag: true,
-          controls: false,
-          nav: false,
-          gutter: 20,
-          edgePadding: isCommutersSlider ? 80 : 120,
-          responsive: {
-            1200: {
-              gutter: isCommutersSlider ? 80 : 120
-            },
-            991: {
-              gutter: 60
-            },
-            568: {
-              gutter: 60
+        let i = tns({
+            container: n,
+            loop: !1,
+            items: 1,
+            autoWidth: !0,
+            mouseDrag: !0,
+            controls: !1,
+            nav: !1,
+            gutter: 20,
+            edgePadding: r ? 80 : 120,
+            responsive: {
+                1200: {
+                    gutter: r ? 80 : 120
+                },
+                991: {
+                    gutter: 60
+                },
+                568: {
+                    gutter: 60
+                }
             }
-          }
-        });
-
-        // Get navigation buttons
-        const prevButton = container.querySelector('.nav-button---slider[direction="left"]');
-        const nextButton = container.querySelector('.nav-button---slider[direction="right"]');
-
-        if (!prevButton || !nextButton) {
-          console.warn('Navigation buttons not found');
-          return;
-        }
-
-        // Update slider state function
-        const updateSliderState = () => {
-          try {
-            const info = slider.getInfo();
-            const isFirstSlide = info.index === 0;
-            const isLastSlide = info.index === info.slideCount - 1;
-
-            // Update button states
-            prevButton.disabled = isFirstSlide;
-            nextButton.disabled = isLastSlide;
-
-            // Update active item attribute
-            sliderElement.setAttribute("item-active", info.index);
-
-            // Get current slide element
-            const currentSlide = document.querySelector(`#tns1-item${info.index}`);
-            if (!currentSlide) {
-              console.warn('Current slide element not found');
-              return;
+        }),
+        l = e.querySelector('.nav-button---slider[direction="left"]'),
+        a = e.querySelector('.nav-button---slider[direction="right"]');
+        
+        if (!l || !a) return; // Skip if navigation buttons not found
+        
+        let s = () => {
+            let e = i.getInfo(),
+                r = 0 === e.index,
+                s = e.index === e.slideCount - 1;
+            l.disabled = r;
+            a.disabled = s;
+            n.setAttribute("item-active", e.index);
+            let c = document.querySelector("#tns1-item" + e.index);
+            
+            if (c) {
+                if (t) t.innerHTML = c.getAttribute("title") || "";
+                if (o) o.innerHTML = c.getAttribute("description") || "";
             }
-
-            // Update title and description if elements exist
-            if (titleElement && currentSlide.hasAttribute('title')) {
-              titleElement.innerHTML = currentSlide.getAttribute('title');
-            }
-            if (descriptionElement && currentSlide.hasAttribute('description')) {
-              descriptionElement.innerHTML = currentSlide.getAttribute('description');
-            }
-          } catch (error) {
-            console.error('Error updating slider state:', error);
-          }
         };
-
-        // Add event listeners
-        prevButton.addEventListener("click", () => {
-          slider.goTo("prev");
-          updateSliderState();
+        
+        l.addEventListener("click", () => {
+            i.goTo("prev");
+            s();
         });
-
-        nextButton.addEventListener("click", () => {
-          slider.goTo("next");
-          updateSliderState();
+        
+        a.addEventListener("click", () => {
+            i.goTo("next");
+            s();
         });
-
-        // Listen for slide changes
-        slider.events.on("indexChanged", updateSliderState);
-
-        // Initialize slider state
-        updateSliderState();
-
-      } catch (containerError) {
-        console.error('Error initializing slider container:', containerError);
-      }
+        
+        i.events.on("indexChanged", s);
+        s();
     });
-  } catch (error) {
-    console.error('Error in ProductPreviewSliderComponentInit:', error);
-  }
 };
 
 // Function to initialize the product showcase section animation
@@ -659,6 +618,125 @@ const ScrollDownComponentInit = () => {
     });
 };
 
+const HomeHeroComponentInit = () => {
+    let e = document.querySelectorAll('section[el="home-hero"]');
+    e.forEach(e => {
+        let t = e.querySelector('[el="image/home-hero"]')
+          , o = e.querySelector('[el="home-hero/marker"]')
+          , r = e.querySelector('[el="home-hero/marker"] .line-image-marker-hero');
+        gsap.fromTo(t, {
+            y: -200
+        }, {
+            y: 200,
+            ease: "none",
+            scrollTrigger: {
+                trigger: e,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: !0,
+                markers: !1
+            }
+        });
+        gsap.fromTo(r, {
+            y: 50,
+            rotate: -80
+        }, {
+            y: -50,
+            rotate: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: e,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: !0,
+                markers: !1
+            }
+        });
+        gsap.to(o, {
+            y: "+=10",
+            repeat: -1,
+            yoyo: !0,
+            ease: "power1.inOut",
+            duration: 2
+        });
+    });
+};
+
+const CalculatorInit = () => {
+    let e = document.querySelectorAll('[el="calculator"]');
+    e.forEach(e => {
+        let t = e.querySelector('[el="calculator/input"]')
+          , o = e.querySelector(".carbon-calculator__input")
+          , r = e.querySelector('[el="calculator/result"]')
+          , n = e.querySelector(".carbon-calculator__result_number div")
+          , i = e.querySelector(".carbon-calculator__result_return");
+        jQuery(".carbon-calculator__submit-button").on("click", function() {
+            let e = Number(o.value);
+            if (!e || e < 0) {
+                o.focus();
+                return;
+            }
+            n.innerHTML = 144 * e + "T";
+            t.style.display = "none";
+            r.style.display = "flex";
+        });
+        i.addEventListener("click", () => {
+            t.style.display = "flex";
+            r.style.display = "none";
+        });
+    });
+    let t = jQuery(".carbon-calculator__bg-lines path").toArray();
+    if (0 !== t.length) {
+        let o = t[0].getTotalLength();
+        t.forEach(e => {
+            e.style.strokeDasharray = o;
+            e.style.strokeDashoffset = o;
+        });
+        let r = (e, t) => {
+            gsap.timeline({
+                repeat: -1,
+                delay: t
+            }).to(e, {
+                duration: 5,
+                strokeDashoffset: 0,
+                ease: "power1.inOut"
+            }).to(e, {
+                duration: 5,
+                strokeDasharray: `${o} ${o}`,
+                strokeDashoffset: -o,
+                ease: "power1.inOut"
+            }).set(e, {
+                strokeDasharray: o,
+                strokeDashoffset: o
+            });
+        };
+        t.forEach((e, t) => {
+            r(e, 1.4 * t);
+        });
+    }
+};
+
+const BrandsCarouselInit = () => {
+    let e = document.querySelector(".brands-carousel");
+    if (!e)
+        return null;
+    let t = e.querySelector(".splide")
+      , o = new Splide(t, {
+        type: "loop",
+        perMove: 1,
+        pagination: !1,
+        arrows: !1,
+        drag: "free",
+        snap: !0,
+        autoWidth: !0,
+        gap: "80px",
+        autoScroll: {
+            speed: 1.5
+        }
+    });
+    o.mount(window.splide.Extensions);
+};
+
 // Animation component
 const Animation = () => {
   useEffect(() => {
@@ -766,6 +844,33 @@ const Animation = () => {
         }
       }
 
+      // Initialize home hero component if elements exist
+      if (document.querySelectorAll('section[el="home-hero"]').length > 0) {
+        try {
+          HomeHeroComponentInit();
+        } catch (homeHeroError) {
+          console.error("Error initializing home hero component:", homeHeroError);
+        }
+      }
+
+      // Initialize calculator if elements exist
+      if (document.querySelectorAll('[el="calculator"]').length > 0) {
+        try {
+          CalculatorInit();
+        } catch (calculatorError) {
+          console.error("Error initializing calculator:", calculatorError);
+        }
+      }
+
+      // Initialize brands carousel if elements exist
+      if (document.querySelector(".brands-carousel")) {
+        try {
+          BrandsCarouselInit();
+        } catch (brandsCarouselError) {
+          console.error("Error initializing brands carousel:", brandsCarouselError);
+        }
+      }
+
     } catch (globalError) {
       console.error("Error in Animation component:", globalError);
     }
@@ -789,7 +894,10 @@ export {
   GenericTextAnimations,
   InView,
   StartJourneyComponentInit,
-  ScrollDownComponentInit
+  ScrollDownComponentInit,
+  HomeHeroComponentInit,
+  CalculatorInit,
+  BrandsCarouselInit
 };
 
 export default Animation;
